@@ -26,19 +26,7 @@
                   th Nombre
                   th Precio
                   th Acciones
-              tr
-                td Producto 1
-                td $ 12.34
-                td aaa
-              tr
-                td Producto 1
-                td $ 12.34
-                td aaa
-              tr
-                td Producto 1
-                td $ 12.34
-                td aaa
-              tr
-                td Producto 1
-                td $ 12.34
+              tr(*ngFor="let product of products")
+                td {{product.name}}
+                td {{product.description}}
                 td aaa

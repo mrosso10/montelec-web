@@ -5,18 +5,16 @@
         button.close(type='button', data-dismiss='modal')
           span(aria-hidden='true') ×
           span.sr-only Close
-        i.fa.fa-laptop.modal-icon
-        h4.modal-title Modal title
-        small.font-bold Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        h4.modal-title Crear un nuevo producto
       .modal-body
-        p
-          strong Lorem Ipsum is simply dummy
-          |  text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
-          |                                                 printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
-          |                                                 remaining essentially unchanged.
-        .form-group
-          label Sample Input
-          input.form-control(type='email', placeholder='Enter your email')
+        form(role='form')
+          .form-group
+            label Nombre
+            input.form-control(type='text', placeholder='' name="name" [(ngModel)]="newProduct.name")
+          .form-group
+            label Descripción
+            input.form-control(type='text', placeholder='' name="description" [(ngModel)]="newProduct.description")
+
       .modal-footer
-        button.btn.btn-white(type='button', data-dismiss='modal') Close
-        button.btn.btn-primary(type='button') Save changes
+        button.btn.btn-white(type='button', data-dismiss='modal') Cancelar
+        button.btn.btn-primary(type='button' (click)="createProduct()" ) Crear

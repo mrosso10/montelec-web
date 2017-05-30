@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpModule, JsonpModule } from '@angular/http';
 import {RouterModule} from "@angular/router";
 import {LocationStrategy, HashLocationStrategy} from '@angular/common';
 
@@ -18,6 +18,7 @@ import {RegisterModule} from "./views/register/register.module";
 import {LayoutsModule} from "./components/common/layouts/layouts.module";
 import { ProductListComponent } from './views/product-list/product-list.component';
 import { ProductNewComponent } from './views/product-new/product-new.component';
+import { ProductService } from './services/product.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,9 @@ import { ProductNewComponent } from './views/product-new/product-new.component';
   imports: [
     // Angular modules
     BrowserModule,
+    FormsModule,
     HttpModule,
+    JsonpModule,
 
     // Views
     MainViewModule,
@@ -41,7 +44,7 @@ import { ProductNewComponent } from './views/product-new/product-new.component';
 
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [ProductService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
