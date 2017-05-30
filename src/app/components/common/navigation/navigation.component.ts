@@ -5,7 +5,7 @@ declare var jQuery:any;
 
 @Component({
     selector: 'navigation',
-    templateUrl: 'navigation.template.html'
+    templateUrl: 'navigation.template.pug'
 })
 
 export class NavigationComponent {

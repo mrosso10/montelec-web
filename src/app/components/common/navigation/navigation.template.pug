@@ -1,0 +1,36 @@
+nav.navbar-default.navbar-static-side(role='navigation')
+  .sidebar-collapse
+    ul#side-menu.nav.metismenu
+      li.nav-header
+        .dropdown.profile-element
+          a.dropdown-toggle(data-toggle='dropdown', href='#')
+            span.block.m-t-xs
+              strong.font-bold Example user
+            span.text-muted.text-xs.block
+              | Example 
+              b.caret
+          ul.dropdown-menu.animated.fadeInRight.m-t-xs
+            li
+              a(href='#') Logout
+        .logo-element
+          | IN+
+      li([ngClass]="{active: activeRoute('mainView')}")
+        a([routerLink]="['/mainView']")
+          i.fa.fa-th-large
+          span.nav-label Main view
+      li([ngClass]="{active: activeRoute('minorView')}")
+        a([routerLink]="['/minorView']")
+          i.fa.fa-desktop
+          span.nav-label Minor view
+      li
+        a([routerLink]="['/login']")
+          i.fa.fa-sign-in
+          span.nav-label Login
+      li
+        a([routerLink]="['/register']")
+          i.fa.fa-pencil
+          span.nav-label Register
+      li([ngClass]="{active: activeRoute('products')}")
+        a([routerLink]="['/products']")
+          i.fa.fa-pencil
+          span.nav-label Productos
