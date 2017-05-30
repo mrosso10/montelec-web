@@ -2,11 +2,12 @@
   .row
     .col-lg-12
       .m-t-lg
+        app-product-new
         .ibox.float-e-margins
           .ibox-title
             h5 Basic Table
             .ibox-tools
-              a.btn.btn-primary Nuevo producto
+              a.btn.btn-primary((click)="openNewProduct()") Nuevo producto
               a.collapse-link
                 i.fa.fa-chevron-up
               a.dropdown-toggle(data-toggle='dropdown', href='#')

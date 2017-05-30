@@ -17,11 +17,13 @@ import {RegisterModule} from "./views/register/register.module";
 // App modules/components
 import {LayoutsModule} from "./components/common/layouts/layouts.module";
 import { ProductListComponent } from './views/product-list/product-list.component';
+import { ProductNewComponent } from './views/product-new/product-new.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductListComponent
+    ProductListComponent,
+    ProductNewComponent
   ],
   imports: [
     // Angular modules

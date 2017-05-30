@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { bindCollapseLink } from '../../app.helpers';
 
+declare var jQuery:any;
+
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.pug',
@@ -10,6 +12,9 @@ export class ProductListComponent implements OnInit {
 
   constructor() { }
 
+  openNewProduct() {
+    jQuery('.modal').modal('show');
+  }
   ngOnInit() {
   }
   ngAfterViewInit() {

@@ -1,0 +1,22 @@
+.modal.inmodal(tabindex='-1', role='dialog', aria-hidden='true')
+  .modal-dialog
+    .modal-content.animated.bounceInRight
+      .modal-header
+        button.close(type='button', data-dismiss='modal')
+          span(aria-hidden='true') ×
+          span.sr-only Close
+        i.fa.fa-laptop.modal-icon
+        h4.modal-title Modal title
+        small.font-bold Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      .modal-body
+        p
+          strong Lorem Ipsum is simply dummy
+          |  text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+          |                                                 printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+          |                                                 remaining essentially unchanged.
+        .form-group
+          label Sample Input
+          input.form-control(type='email', placeholder='Enter your email')
+      .modal-footer
+        button.btn.btn-white(type='button', data-dismiss='modal') Close
+        button.btn.btn-primary(type='button') Save changes
