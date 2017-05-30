@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { bindCollapseLink } from '../../app.helpers';
 
 @Component({
   selector: 'app-product-list',
@@ -11,5 +12,7 @@ export class ProductListComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  ngAfterViewInit() {
+    bindCollapseLink();
+  }
 }

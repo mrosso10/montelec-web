@@ -64,3 +64,18 @@ export function smoothlyMenu() {
     jQuery('#side-menu').removeAttr('style');
   }
 }
+
+export function bindCollapseLink() {
+  jQuery('.collapse-link').on('click', function () {
+    var ibox = jQuery(this).closest('div.ibox');
+    var button = jQuery(this).find('i');
+    var content = ibox.children('.ibox-content');
+    content.slideToggle(200);
+    button.toggleClass('fa-chevron-up').toggleClass('fa-chevron-down');
+    ibox.toggleClass('').toggleClass('border-bottom');
+    setTimeout(function () {
+        ibox.resize();
+        ibox.find('[id^=map-]').resize();
+    }, 50);
+  });
+}

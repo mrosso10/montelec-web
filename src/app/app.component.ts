@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { correctHeight, detectBody } from './app.helpers';
+import { correctHeight, detectBody, bindCollapseLink } from './app.helpers';
 
 declare var jQuery:any;
 
