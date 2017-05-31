@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ProductService } from '../../services/product.service';
 import { Product } from '../../models/product';
+
+declare var jQuery:any;
 
 @Component({
   selector: 'app-product-new',
@@ -10,6 +12,8 @@ import { Product } from '../../models/product';
 export class ProductNewComponent implements OnInit {
   newProduct: Product = new Product;
 
+  @Input() products;
+
   constructor(private productService: ProductService) { }
 
   ngOnInit() {
@@ -17,7 +21,8 @@ export class ProductNewComponent implements OnInit {
   createProduct() {
     this.productService.create(this.newProduct)
       .then(product => {
-        // this.heroes.push(hero);
+        this.products.push(product);
+        jQuery('.modal').modal('hide')
         // this.selectedHero = null;
       });
   }
